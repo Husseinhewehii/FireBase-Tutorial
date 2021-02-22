@@ -16,3 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/firebase-controller-index', 'FireBaseController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/fcm', 'FireBaseController@index_2')->name('fcm.index');
