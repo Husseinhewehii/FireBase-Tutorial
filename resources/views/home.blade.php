@@ -15,9 +15,42 @@
                     @endif
 
                     You are logged in!
+                    You are logged in!
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    <script>
+        function sendTokenToServer(token){
+            axios.post('/api/save-fcm-token', {
+                token
+            }).then(res => {
+                console.log(res);
+            });
+        }
+
+        messaging.getToken({ vapidKey: '<YOUR_PUBLIC_VAPID_KEY_HERE>' }).then((currentToken) => {
+            if (currentToken) {
+                // Send the token to your server and update the UI if necessary
+                sendTokenToServer('token value')
+                // ...
+            } else {
+                // Show permission request UI
+                console.log('No registration token available. Request permission to generate one.');
+                // ...
+            }
+        }).catch((err) => {
+            console.log('An error occurred while retrieving token. ', err);
+            // ...
+        });
+
+    </script>
+@endsection
+
+
+
+
