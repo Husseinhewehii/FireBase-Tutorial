@@ -21,6 +21,21 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBydtC0ldj-QMwYDjcdVHMcVuHp1ngHoYo",
+            authDomain: "laravel-tutorial-3f93d.firebaseapp.com",
+            databaseURL: "https://laravel-tutorial-3f93d-default-rtdb.firebaseio.com",
+            projectId: "laravel-tutorial-3f93d",
+            storageBucket: "laravel-tutorial-3f93d.appspot.com",
+            messagingSenderId: "41684284800",
+            appId: "1:41684284800:web:e4b0397607b699731dfd65",
+            measurementId: "G-MQGS33D1EC"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

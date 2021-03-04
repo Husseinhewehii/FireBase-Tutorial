@@ -25,15 +25,20 @@
 
 @section('scripts')
     <script>
+
+        //firebase.analytics();
+        const messaging = firebase.messaging();
+
         function sendTokenToServer(token){
-            axios.post('/api/save-fcm-token', {
-                token
-            }).then(res => {
-                console.log(res);
-            });
+            // axios.post('/api/save-fcm-token', {
+            //     token
+            // }).then(res => {
+            //     console.log(res);
+            // });
+            console.log('send token function');
         }
 
-        messaging.getToken({ vapidKey: '<YOUR_PUBLIC_VAPID_KEY_HERE>' }).then((currentToken) => {
+        messaging.getToken().then((currentToken) => {
             if (currentToken) {
                 // Send the token to your server and update the UI if necessary
                 sendTokenToServer('token value')
